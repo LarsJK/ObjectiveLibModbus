@@ -30,7 +30,7 @@
 #include <unistd.h>
 #endif
 
-//#include <config.h>
+#include "config.h"
 
 #include "modbus.h"
 #include "modbus-private.h"
@@ -39,9 +39,9 @@
 #define MSG_LENGTH_UNDEFINED -1
 
 /* Exported version */
-//const unsigned int libmodbus_version_major = LIBMODBUS_VERSION_MAJOR;
-//const unsigned int libmodbus_version_minor = LIBMODBUS_VERSION_MINOR;
-//const unsigned int libmodbus_version_micro = LIBMODBUS_VERSION_MICRO;
+const unsigned int libmodbus_version_major = LIBMODBUS_VERSION_MAJOR;
+const unsigned int libmodbus_version_minor = LIBMODBUS_VERSION_MINOR;
+const unsigned int libmodbus_version_micro = LIBMODBUS_VERSION_MICRO;
 
 /* Max between RTU and TCP max adu length (so TCP) */
 #define MAX_MESSAGE_LENGTH 260

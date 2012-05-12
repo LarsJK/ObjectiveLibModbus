@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462A2546155EB87E00DA26F6 /* modbus.c in Sources */ = {isa = PBXBuildFile; fileRef = 462A253A155EB87E00DA26F6 /* modbus.c */; };
+		462A2547155EB87E00DA26F6 /* modbus-data.c in Sources */ = {isa = PBXBuildFile; fileRef = 462A253E155EB87E00DA26F6 /* modbus-data.c */; };
+		462A2548155EB87E00DA26F6 /* modbus-rtu.c in Sources */ = {isa = PBXBuildFile; fileRef = 462A2540155EB87E00DA26F6 /* modbus-rtu.c */; };
+		462A2549155EB87E00DA26F6 /* modbus-tcp.c in Sources */ = {isa = PBXBuildFile; fileRef = 462A2543155EB87E00DA26F6 /* modbus-tcp.c */; };
+		462A2551155ED20A00DA26F6 /* ObjectiveLibModbus.m in Sources */ = {isa = PBXBuildFile; fileRef = 462A254F155ED20A00DA26F6 /* ObjectiveLibModbus.m */; };
 		46A2D944155DBA50005AB2A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A2D943155DBA50005AB2A9 /* UIKit.framework */; };
 		46A2D946155DBA50005AB2A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A2D945155DBA50005AB2A9 /* Foundation.framework */; };
 		46A2D948155DBA50005AB2A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A2D947155DBA50005AB2A9 /* CoreGraphics.framework */; };
@@ -21,17 +26,6 @@
 		46A2D967155DBA51005AB2A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A2D945155DBA50005AB2A9 /* Foundation.framework */; };
 		46A2D96F155DBA51005AB2A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46A2D96D155DBA51005AB2A9 /* InfoPlist.strings */; };
 		46A2D972155DBA51005AB2A9 /* ModbusDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2D971155DBA51005AB2A9 /* ModbusDemoTests.m */; };
-		46A2D97E155DBA85005AB2A9 /* ObjectiveLibModbus.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2D97D155DBA85005AB2A9 /* ObjectiveLibModbus.m */; };
-		46A2D98B155DBB69005AB2A9 /* modbus-data.c in Sources */ = {isa = PBXBuildFile; fileRef = 46A2D981155DBB69005AB2A9 /* modbus-data.c */; };
-		46A2D98C155DBB69005AB2A9 /* modbus-data.c in Sources */ = {isa = PBXBuildFile; fileRef = 46A2D981155DBB69005AB2A9 /* modbus-data.c */; };
-		46A2D98D155DBB69005AB2A9 /* modbus-rtu.c in Sources */ = {isa = PBXBuildFile; fileRef = 46A2D984155DBB69005AB2A9 /* modbus-rtu.c */; };
-		46A2D98E155DBB69005AB2A9 /* modbus-rtu.c in Sources */ = {isa = PBXBuildFile; fileRef = 46A2D984155DBB69005AB2A9 /* modbus-rtu.c */; };
-		46A2D98F155DBB69005AB2A9 /* modbus-tcp.c in Sources */ = {isa = PBXBuildFile; fileRef = 46A2D987155DBB69005AB2A9 /* modbus-tcp.c */; };
-		46A2D990155DBB69005AB2A9 /* modbus-tcp.c in Sources */ = {isa = PBXBuildFile; fileRef = 46A2D987155DBB69005AB2A9 /* modbus-tcp.c */; };
-		46A2D991155DBB69005AB2A9 /* modbus.c in Sources */ = {isa = PBXBuildFile; fileRef = 46A2D989155DBB69005AB2A9 /* modbus.c */; };
-		46A2D992155DBB69005AB2A9 /* modbus.c in Sources */ = {isa = PBXBuildFile; fileRef = 46A2D989155DBB69005AB2A9 /* modbus.c */; };
-		46A2D994155DBB90005AB2A9 /* modbus-version.h in Resources */ = {isa = PBXBuildFile; fileRef = 46A2D993155DBB90005AB2A9 /* modbus-version.h */; };
-		46A2D995155DBB90005AB2A9 /* modbus-version.h in Resources */ = {isa = PBXBuildFile; fileRef = 46A2D993155DBB90005AB2A9 /* modbus-version.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +39,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		462A253A155EB87E00DA26F6 /* modbus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = modbus.c; path = ../../Vendor/libmodbus/modbus.c; sourceTree = "<group>"; };
+		462A253B155EB87E00DA26F6 /* modbus-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-private.h"; path = "../../Vendor/libmodbus/modbus-private.h"; sourceTree = "<group>"; };
+		462A253C155EB87E00DA26F6 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../../Vendor/libmodbus/config.h; sourceTree = "<group>"; };
+		462A253D155EB87E00DA26F6 /* modbus-version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-version.h"; path = "../../Vendor/libmodbus/modbus-version.h"; sourceTree = "<group>"; };
+		462A253E155EB87E00DA26F6 /* modbus-data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "modbus-data.c"; path = "../../Vendor/libmodbus/modbus-data.c"; sourceTree = "<group>"; };
+		462A253F155EB87E00DA26F6 /* modbus-rtu-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-rtu-private.h"; path = "../../Vendor/libmodbus/modbus-rtu-private.h"; sourceTree = "<group>"; };
+		462A2540155EB87E00DA26F6 /* modbus-rtu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "modbus-rtu.c"; path = "../../Vendor/libmodbus/modbus-rtu.c"; sourceTree = "<group>"; };
+		462A2541155EB87E00DA26F6 /* modbus-rtu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-rtu.h"; path = "../../Vendor/libmodbus/modbus-rtu.h"; sourceTree = "<group>"; };
+		462A2542155EB87E00DA26F6 /* modbus-tcp-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-tcp-private.h"; path = "../../Vendor/libmodbus/modbus-tcp-private.h"; sourceTree = "<group>"; };
+		462A2543155EB87E00DA26F6 /* modbus-tcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "modbus-tcp.c"; path = "../../Vendor/libmodbus/modbus-tcp.c"; sourceTree = "<group>"; };
+		462A2544155EB87E00DA26F6 /* modbus-tcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-tcp.h"; path = "../../Vendor/libmodbus/modbus-tcp.h"; sourceTree = "<group>"; };
+		462A2545155EB87E00DA26F6 /* modbus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = modbus.h; path = ../../Vendor/libmodbus/modbus.h; sourceTree = "<group>"; };
+		462A254F155ED20A00DA26F6 /* ObjectiveLibModbus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveLibModbus.m; path = ../../ObjectiveLibModbus/ObjectiveLibModbus.m; sourceTree = "<group>"; };
+		462A2550155ED20A00DA26F6 /* ObjectiveLibModbus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveLibModbus.h; path = ../../ObjectiveLibModbus/ObjectiveLibModbus.h; sourceTree = "<group>"; };
 		46A2D93F155DBA50005AB2A9 /* ModbusDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModbusDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A2D943155DBA50005AB2A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		46A2D945155DBA50005AB2A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,19 +73,6 @@
 		46A2D96E155DBA51005AB2A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		46A2D970155DBA51005AB2A9 /* ModbusDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModbusDemoTests.h; sourceTree = "<group>"; };
 		46A2D971155DBA51005AB2A9 /* ModbusDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModbusDemoTests.m; sourceTree = "<group>"; };
-		46A2D97C155DBA85005AB2A9 /* ObjectiveLibModbus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveLibModbus.h; path = ../../ObjectiveLibModbus.h; sourceTree = "<group>"; };
-		46A2D97D155DBA85005AB2A9 /* ObjectiveLibModbus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveLibModbus.m; path = ../../ObjectiveLibModbus.m; sourceTree = "<group>"; };
-		46A2D981155DBB69005AB2A9 /* modbus-data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "modbus-data.c"; sourceTree = "<group>"; };
-		46A2D982155DBB69005AB2A9 /* modbus-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-private.h"; sourceTree = "<group>"; };
-		46A2D983155DBB69005AB2A9 /* modbus-rtu-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-rtu-private.h"; sourceTree = "<group>"; };
-		46A2D984155DBB69005AB2A9 /* modbus-rtu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "modbus-rtu.c"; sourceTree = "<group>"; };
-		46A2D985155DBB69005AB2A9 /* modbus-rtu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-rtu.h"; sourceTree = "<group>"; };
-		46A2D986155DBB69005AB2A9 /* modbus-tcp-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-tcp-private.h"; sourceTree = "<group>"; };
-		46A2D987155DBB69005AB2A9 /* modbus-tcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "modbus-tcp.c"; sourceTree = "<group>"; };
-		46A2D988155DBB69005AB2A9 /* modbus-tcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-tcp.h"; sourceTree = "<group>"; };
-		46A2D989155DBB69005AB2A9 /* modbus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = modbus.c; sourceTree = "<group>"; };
-		46A2D98A155DBB69005AB2A9 /* modbus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modbus.h; sourceTree = "<group>"; };
-		46A2D993155DBB90005AB2A9 /* modbus-version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-version.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +178,8 @@
 		46A2D97B155DBA5A005AB2A9 /* ObjectiveLibModbus */ = {
 			isa = PBXGroup;
 			children = (
-				46A2D97C155DBA85005AB2A9 /* ObjectiveLibModbus.h */,
-				46A2D97D155DBA85005AB2A9 /* ObjectiveLibModbus.m */,
+				462A254F155ED20A00DA26F6 /* ObjectiveLibModbus.m */,
+				462A2550155ED20A00DA26F6 /* ObjectiveLibModbus.h */,
 			);
 			name = ObjectiveLibModbus;
 			sourceTree = "<group>";
@@ -200,17 +195,18 @@
 		46A2D980155DBB42005AB2A9 /* LibModbus */ = {
 			isa = PBXGroup;
 			children = (
-				46A2D993155DBB90005AB2A9 /* modbus-version.h */,
-				46A2D981155DBB69005AB2A9 /* modbus-data.c */,
-				46A2D982155DBB69005AB2A9 /* modbus-private.h */,
-				46A2D983155DBB69005AB2A9 /* modbus-rtu-private.h */,
-				46A2D984155DBB69005AB2A9 /* modbus-rtu.c */,
-				46A2D985155DBB69005AB2A9 /* modbus-rtu.h */,
-				46A2D986155DBB69005AB2A9 /* modbus-tcp-private.h */,
-				46A2D987155DBB69005AB2A9 /* modbus-tcp.c */,
-				46A2D988155DBB69005AB2A9 /* modbus-tcp.h */,
-				46A2D989155DBB69005AB2A9 /* modbus.c */,
-				46A2D98A155DBB69005AB2A9 /* modbus.h */,
+				462A253A155EB87E00DA26F6 /* modbus.c */,
+				462A253B155EB87E00DA26F6 /* modbus-private.h */,
+				462A253C155EB87E00DA26F6 /* config.h */,
+				462A253D155EB87E00DA26F6 /* modbus-version.h */,
+				462A253E155EB87E00DA26F6 /* modbus-data.c */,
+				462A253F155EB87E00DA26F6 /* modbus-rtu-private.h */,
+				462A2540155EB87E00DA26F6 /* modbus-rtu.c */,
+				462A2541155EB87E00DA26F6 /* modbus-rtu.h */,
+				462A2542155EB87E00DA26F6 /* modbus-tcp-private.h */,
+				462A2543155EB87E00DA26F6 /* modbus-tcp.c */,
+				462A2544155EB87E00DA26F6 /* modbus-tcp.h */,
+				462A2545155EB87E00DA26F6 /* modbus.h */,
 			);
 			name = LibModbus;
 			sourceTree = "<group>";
@@ -289,7 +285,6 @@
 				46A2D94E155DBA51005AB2A9 /* InfoPlist.strings in Resources */,
 				46A2D957155DBA51005AB2A9 /* MainStoryboard_iPhone.storyboard in Resources */,
 				46A2D95A155DBA51005AB2A9 /* MainStoryboard_iPad.storyboard in Resources */,
-				46A2D994155DBB90005AB2A9 /* modbus-version.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				46A2D96F155DBA51005AB2A9 /* InfoPlist.strings in Resources */,
-				46A2D995155DBB90005AB2A9 /* modbus-version.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,11 +322,11 @@
 				46A2D950155DBA51005AB2A9 /* main.m in Sources */,
 				46A2D954155DBA51005AB2A9 /* LJKAppDelegate.m in Sources */,
 				46A2D95D155DBA51005AB2A9 /* LJKViewController.m in Sources */,
-				46A2D97E155DBA85005AB2A9 /* ObjectiveLibModbus.m in Sources */,
-				46A2D98B155DBB69005AB2A9 /* modbus-data.c in Sources */,
-				46A2D98D155DBB69005AB2A9 /* modbus-rtu.c in Sources */,
-				46A2D98F155DBB69005AB2A9 /* modbus-tcp.c in Sources */,
-				46A2D991155DBB69005AB2A9 /* modbus.c in Sources */,
+				462A2546155EB87E00DA26F6 /* modbus.c in Sources */,
+				462A2547155EB87E00DA26F6 /* modbus-data.c in Sources */,
+				462A2548155EB87E00DA26F6 /* modbus-rtu.c in Sources */,
+				462A2549155EB87E00DA26F6 /* modbus-tcp.c in Sources */,
+				462A2551155ED20A00DA26F6 /* ObjectiveLibModbus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,10 +335,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				46A2D972155DBA51005AB2A9 /* ModbusDemoTests.m in Sources */,
-				46A2D98C155DBB69005AB2A9 /* modbus-data.c in Sources */,
-				46A2D98E155DBB69005AB2A9 /* modbus-rtu.c in Sources */,
-				46A2D990155DBB69005AB2A9 /* modbus-tcp.c in Sources */,
-				46A2D992155DBB69005AB2A9 /* modbus.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +506,7 @@
 				46A2D977155DBA51005AB2A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46A2D978155DBA51005AB2A9 /* Build configuration list for PBXNativeTarget "ModbusDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +515,7 @@
 				46A2D97A155DBA51005AB2A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
