@@ -37,4 +37,7 @@ typedef enum {
 - (void) readInputBitsFrom:(int)startAddress count:(int)count success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
 - (void) readRegistersFrom:(int)startAddress count:(int)count success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
 - (void) readInputRegistersFrom:(int)startAddress count:(int)count success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
+
+- (void) writeRegistersFromAndOn:(int)address toValues:(NSArray*)numberArray success:(void (^)())success failure:(void (^)(NSError *error))failure;
+
 @end

@@ -290,6 +290,33 @@
     });
 }
 
+- (void) writeRegistersFromAndOn:(int)address toValues:(NSArray*)numberArray success:(void (^)())success failure:(void (^)(NSError *error))failure {
+    dispatch_async(modbusQueue, ^{
+        
+        uint16_t valueArray[numberArray.count];
+        
+        for (int i = 0; i < numberArray.count; i++) {
+            valueArray[i] = [[numberArray objectAtIndex:i] intValue];
+        }
+          
+        if (modbus_write_registers(mb, address, numberArray.count, valueArray)) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success();
+            });
+        }
+        else {
+            NSString *errorString = [NSString stringWithUTF8String:modbus_strerror(errno)];
+            NSMutableDictionary* details = [NSMutableDictionary dictionary];
+            [details setValue:errorString forKey:NSLocalizedDescriptionKey];
+            // populate the error object with the details
+            NSError *error = [NSError errorWithDomain:@"Modbus" code:errno userInfo:details];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure(error);
+            });
+        }
+    });
+}
+
 - (void) dealloc {
     dispatch_release(modbusQueue);
     modbus_free(mb);
