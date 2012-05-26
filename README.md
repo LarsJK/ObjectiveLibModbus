@@ -13,6 +13,8 @@ If you dont use CocoaPods do this:
 - Drag all the .c and .h files from the Vendor/libmodbus folder into you're project.
 - Drag ObjectiveLibModbus.h and ObjectiveLibModbus.m into you're project from ObjectiveLibModbus folder.
 
+Now that you're set up, do the following to make modbus calls
+
 - Import ObjectiveLibModbus where you will be using it:
 ``` objective-c
 #import "ObjectiveLibModbus.h"
