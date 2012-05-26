@@ -2,14 +2,16 @@
 
 This is an Objective-C wrapper class for the [*libmodbus library*](http://libmodbus.org). The wrapper is free to use for anyone (GNU Lesser Public License).
 
-The wrapper only supports TCP for now. It does not wrap all of the libmodbus functions. I recommend reading th elibmodbus documentation if you are missing some features. Chances are libmodbus already supports it! If you modify or extend the code, please contribute back!
+The wrapper only supports TCP for now. It does not wrap all of the libmodbus functions. I recommend reading the libmodbus documentation if you are missing some features. Chances are libmodbus already supports it! If you modify or extend the code, please contribute back!
 
 ## How To Get Started
 
-- [Download libmodbus](https://github.com/AFNetworking/AFNetworking/zipball/master) and this wrapper class.
-- Drag all the files from the src folder in libmodbus into you're project.
-- Remove the line #include <config.h> from the top of modbus.c and modbus-private.h.
-- Drag ObjectiveLibModbus.h and ObjectiveLibModbus.m into you're project.
+The easiest way to get this working is to use [*CocoaPods*](http://cocoapods.org/)
+
+If you dont use CocoaPods do this:
+
+- Drag all the .c and .h files from the Vendor/libmodbus folder into you're project.
+- Drag ObjectiveLibModbus.h and ObjectiveLibModbus.m into you're project from ObjectiveLibModbus folder.
 
 - Import ObjectiveLibModbus where you will be using it:
 ``` objective-c
