@@ -102,7 +102,7 @@ void _error_print(modbus_t *ctx, const char *context)
     }
 }
 
-int _sleep_and_flush(modbus_t *ctx)
+static int _sleep_and_flush(modbus_t *ctx)
 {
 #ifdef _WIN32
     /* usleep doesn't exist on Windows */

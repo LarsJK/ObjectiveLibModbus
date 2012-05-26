@@ -16,6 +16,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#import "modbus.h"
+
 #include <stdlib.h>
 #ifndef _MSC_VER
 #include <stdint.h>
