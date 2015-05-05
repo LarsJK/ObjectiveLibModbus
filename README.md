@@ -15,7 +15,7 @@ If you dont use CocoaPods do this:
 
 Now that you're set up, do the following to make modbus calls
 
-- Import ObjectiveLibModbus where you will be using it:
+- Import ObjectiveLibModus where you will be using it:
 ``` objective-c
 #import "ObjectiveLibModbus.h"
 ```
