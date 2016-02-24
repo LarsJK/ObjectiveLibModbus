@@ -2,7 +2,7 @@
 
 This is a Swift port of Lars-Jørgen Kristiansen's ObjectiveLibModbus. For those who are not familiar with his work, it is a wrapper class for the [*libmodbus library*](http://libmodbus.org).
 
-Currently, this project is a direct port of ObjectiveLibModbus. I tried to stay true to his code as much as can, but moving forward, my plan is to include more of the features available in libmodbus and adding 32-bit data support. I'm also planning on adding features such as reading data from non-consecutive addresses (i.e. address 1, 10, and 20). I will try to port back those features to ObjectiveLibModbus as well.
+Currently, this project is a direct port of ObjectiveLibModbus. I tried to stay true to his code as much as I can, but moving forward, my plan is to include more of the features available in libmodbus and adding 32-bit data support. I'm also planning on adding features such as reading data from non-consecutive addresses (i.e. address 1, 10, and 20). I will try to port back those features to ObjectiveLibModbus as well.
 
 ## Just in case if you were wondering...
 
