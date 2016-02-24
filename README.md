@@ -20,7 +20,7 @@ Please feel free to add, modify, suggest, comment, or whatever.
 
 Now that you're set up, do the following to make modbus calls
 
-- Now make a new instance of ObjectiveLibModbus and connect:
+- Now make a new instance of SwiftLibModbus and connect:
 ``` swift
 let swiftLibModbus = SwiftLibModbus(ipAddress: "192.168.2.10", port: 502, device: 1)
 swiftLibModbus.connect(
