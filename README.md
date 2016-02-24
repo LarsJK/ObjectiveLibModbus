@@ -1,3 +1,7 @@
+# NOTE!
+
+This project has been abandoned, but there is a new Swift fork [ktsakaguchi/SwiftLibModbus](https://github.com/ktsakaguchi/SwiftLibModbus). I recommend using that instead!
+
 # ObjectiveLibModbus
 
 This is an Objective-C wrapper class for the [*libmodbus library*](http://libmodbus.org). The wrapper is free to use for anyone (GNU Lesser Public License).
