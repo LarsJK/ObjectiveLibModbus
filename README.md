@@ -1,6 +1,6 @@
-# ObjectiveLibModbus
+# SwiftLibModbus
 
-This is an Objective-C wrapper class for the [*libmodbus library*](http://libmodbus.org). The wrapper is free to use for anyone (GNU Lesser Public License).
+This is a Swift wrapper class for the [*libmodbus library*](http://libmodbus.org). The wrapper is free to use for anyone (GNU Lesser Public License).
 
 The wrapper only supports TCP for now. It does not wrap all of the libmodbus functions. I recommend reading the libmodbus documentation if you are missing some features. Chances are libmodbus already supports it! If you modify or extend the code, please contribute back!
 
