@@ -6,7 +6,7 @@ Currently, this project is a direct port of ObjectiveLibModbus. I tried to stay 
 
 ## Just in case if you were wondering...
 
-I started this project for few reasons. I originally used ObjectiveLibModbus in my modbus communication app and it worked amazingly well, but it was an unwrapping nightmare for closures (having to do things like (([AnyObject]!) -> Void)!). I also noticed that many people were looking for a Swift Modbus Library (ok, it's not truly a Swift library but one step closer). And through this project, I'm learning the differences between Swift and Objective-C.
+I started this project for few reasons. I originally used ObjectiveLibModbus in my modbus communication app and it worked amazingly well, but it was an unwrapping nightmare for closures (having to do things like (([AnyObject]!) -> Void)! because of Swift). I also noticed that many people were looking for a Swift Modbus Library (ok, it's not truly a Swift library but one step closer). And through this project, I'm learning the differences between Swift and Objective-C.
 
 ## Oh, and one more thing...
 
