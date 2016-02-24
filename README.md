@@ -4,11 +4,11 @@ This is a Swift port of Lars-Jørgen Kristiansen's ObjectiveLibModbus. For those
 
 Currently, this project is a direct port of ObjectiveLibModbus. I tried to stay true to his code as much as can, but moving forward, my plan is to extend this to include more of the features available in libmodbus and also adding 32-bit data support. I'm also planning on adding other features like reading data from non-consecutive addresses (i.e. address 1, 10, and 20). I will try to port back some of those features to ObjectiveLibModbus as time permits.
 
-# Just in case if you were wondering...
+## Just in case if you were wondering...
 
 I started this project for few reasons. I originally used ObjectiveLibModbus in my modbus communication app and it worked amazingly, but it was a unwrapping nightmare for success/failure closures. I also noticed that many people were looking for a Swift Modbus Lirary (ok, it's not truly Swift library but one step closer). And through this project, I'm learning the differences between Swift and Objective-C.
 
-# Oh, and one more thing...
+## Oh, and one more thing...
 
 Please feel free to add, modify, suggest, comment or whatever.
 
