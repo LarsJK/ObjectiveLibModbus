@@ -14,8 +14,8 @@ Please feel free to add, modify, suggest, comment, or whatever.
 
 ## How To Get Started
 
-- Drag all the .c and .h files from the Vendor/libmodbus folder into you're project.
-- Drag SwiftLibModbus.swift and SwiftLibModbus-Bridging-Header.h into you're project from SwiftLibModbus folder.
+- Drag all the .c and .h files from the Vendor/libmodbus folder into your project.
+- Drag SwiftLibModbus.swift and SwiftLibModbus-Bridging-Header.h into your project from SwiftLibModbus folder.
 - Make sure to add SwiftLibModbus-Bridging-Header.h to the project's Build Setting. If you already have a Bridging Header, copy and paste the content of SwiftLibModbus-Bridging-Header.h to your Bridging Header.
 
 Now that you're set up, do the following to make modbus calls
