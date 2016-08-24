@@ -1,6 +1,8 @@
 # NOTE!
 
-This project has been abandoned. I started work on a swift wrapper for libmodbus ([example](https://github.com/LarsJK/libmodbus-swift-example), [library](https://github.com/LarsJK/libmodbus-swift), [system-module](https://github.com/LarsJK/Clibmodbus)), and there is a new Swift fork [ktsakaguchi/SwiftLibModbus](https://github.com/ktsakaguchi/SwiftLibModbus). I recommend using that instead!
+This project has been abandoned.
+
+I started work on a swift wrapper for libmodbus ([example](https://github.com/LarsJK/libmodbus-swift-example), [library](https://github.com/LarsJK/libmodbus-swift), [system-module](https://github.com/LarsJK/Clibmodbus)), and there is a new Swift fork [ktsakaguchi/SwiftLibModbus](https://github.com/ktsakaguchi/SwiftLibModbus). I recommend using that instead!
 
 # ObjectiveLibModbus
 
