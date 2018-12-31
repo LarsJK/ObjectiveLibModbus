@@ -32,7 +32,7 @@ class SwiftLibModbus: NSObject {
         self.ipAddress = ipAddress
         mb = modbus_new_tcp(ipAddress.cString(using: String.Encoding.ascii.rawValue) , port)
         var modbusErrorRecoveryMode = modbus_error_recovery_mode(0)
-        modbusErrorRecoveryMode.rawValue = MODBUS_ERROR_RECOVERY_LINK.rawValue | MODBUS_ERROR_RECOVERY_PROTOCOL.rawValue
+        modbusErrorRecoveryMode = modbus_error_recovery_mode(rawValue: MODBUS_ERROR_RECOVERY_LINK.rawValue | MODBUS_ERROR_RECOVERY_PROTOCOL.rawValue)
         modbus_set_error_recovery(mb!, modbusErrorRecoveryMode)
         modbus_set_slave(mb!, device)
         return true
@@ -266,9 +266,9 @@ class SwiftLibModbus: NSObject {
     }
     
     private func buildNSError(errno: Int32, errorString: NSString) -> NSError {
-        let details = NSMutableDictionary()
-        details.setValue(errorString, forKey: NSLocalizedDescriptionKey)
-        let error = NSError(domain: "Modbus", code: Int(errno), userInfo: details as [NSObject : AnyObject])
+        var details: [String: Any] = [:]
+        details[NSLocalizedDescriptionKey] = errorString
+        let error = NSError(domain: "Modbus", code: Int(errno), userInfo: details)
         return error
     }
     
