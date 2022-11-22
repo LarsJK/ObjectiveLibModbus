@@ -346,6 +346,6 @@ class SwiftLibModbus: NSObject {
     
     deinit {
         guard let mb = mb else { return }
-        modbus_free(mb);
+        modbus_free(mb)
     }
 }
