@@ -31,15 +31,17 @@ class SwiftLibModbus: NSObject {
     func setupTCP(ipAddress: NSString, port: Int32, device: Int32) -> Bool {
         self.ipAddress = ipAddress
         mb = modbus_new_tcp(ipAddress.cString(using: String.Encoding.ascii.rawValue) , port)
+        guard let mb = mb else { return false }
         var modbusErrorRecoveryMode = modbus_error_recovery_mode(0)
         modbusErrorRecoveryMode = modbus_error_recovery_mode(rawValue: MODBUS_ERROR_RECOVERY_LINK.rawValue | MODBUS_ERROR_RECOVERY_PROTOCOL.rawValue)
-        modbus_set_error_recovery(mb!, modbusErrorRecoveryMode)
-        modbus_set_slave(mb!, device)
+        modbus_set_error_recovery(mb, modbusErrorRecoveryMode)
+        modbus_set_slave(mb, device)
         return true
     }
     
     func connectWithError(_ error: NSError) -> Bool {
-        let ret = modbus_connect(mb!)
+        guard let mb = mb else { return false }
+        let ret = modbus_connect(mb)
         if ret == -1 {
             var error = error
             error = self.buildNSError(errno: errno)
@@ -50,7 +52,15 @@ class SwiftLibModbus: NSObject {
     
     func connect(success: @escaping () -> Void, failure: @escaping (NSError) -> Void) {
         modbusQueue?.async {
-            let ret = modbus_connect(self.mb!)
+            guard let mb = self.mb else {
+                let error = self.buildNSError(errno: errno)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
+                return
+            }
+            
+            let ret = modbus_connect(mb)
             if ret == -1 {
                 let error = self.buildNSError(errno: errno)
                 DispatchQueue.main.async {
@@ -65,7 +75,8 @@ class SwiftLibModbus: NSObject {
     }
     
     func disconnect() {
-        modbus_close(mb!)
+        guard let mb = mb else { return }
+        modbus_close(mb)
     }
     
     func writeType(type: FunctionType, address: Int32, value: Int32, success: @escaping () -> Void, failure: @escaping (NSError) -> Void) {
@@ -135,7 +146,15 @@ class SwiftLibModbus: NSObject {
     
     func writeBit(address: Int32, status: Bool, success: @escaping () -> Void, failure: @escaping (NSError) -> Void) {
         modbusQueue?.async {
-            if modbus_write_bit(self.mb!, address, status ? 1 : 0) >= 0 {
+            guard let mb = self.mb else {
+                let error = self.buildNSError(errno: errno)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
+                return
+            }
+            
+            if modbus_write_bit(mb, address, status ? 1 : 0) >= 0 {
                 DispatchQueue.main.async {
                     success()
                 }
@@ -150,7 +169,15 @@ class SwiftLibModbus: NSObject {
     
     func writeRegister(address: Int32, value: Int32, success: @escaping () -> Void, failure: @escaping (NSError) -> Void) {
         modbusQueue?.async {
-            if modbus_write_register(self.mb!, address, value) >= 0 {
+            guard let mb = self.mb else {
+                let error = self.buildNSError(errno: errno)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
+                return
+            }
+            
+            if modbus_write_register(mb, address, value) >= 0 {
                 DispatchQueue.main.async {
                     success()
                 }
@@ -165,8 +192,16 @@ class SwiftLibModbus: NSObject {
     
     func readBitsFrom(startAddress: Int32, count: Int32, success: @escaping ([AnyObject]) -> Void, failure: @escaping (NSError) -> Void) {
         modbusQueue?.async {
+            guard let mb = self.mb else {
+                let error = self.buildNSError(errno: errno)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
+                return
+            }
+            
             let tab_reg: UnsafeMutablePointer<UInt8> = UnsafeMutablePointer<UInt8>.allocate(capacity: Int(count))
-            if modbus_read_bits(self.mb!, startAddress, count, tab_reg) >= 0 {
+            if modbus_read_bits(mb, startAddress, count, tab_reg) >= 0 {
                 let returnArray: NSMutableArray = NSMutableArray(capacity: Int(count))
                 for i in 0..<Int(count) {
                     returnArray.add(Int(tab_reg[i]))
@@ -185,8 +220,16 @@ class SwiftLibModbus: NSObject {
     
     func readInputBitsFrom(startAddress: Int32, count: Int32, success: @escaping ([AnyObject]) -> Void, failure: @escaping (NSError) -> Void) {
         modbusQueue?.async {
+            guard let mb = self.mb else {
+                let error = self.buildNSError(errno: errno)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
+                return
+            }
+            
             let tab_reg: UnsafeMutablePointer<UInt8> = UnsafeMutablePointer<UInt8>.allocate(capacity: Int(count))
-            if modbus_read_input_bits(self.mb!, startAddress, count, tab_reg) >= 0 {
+            if modbus_read_input_bits(mb, startAddress, count, tab_reg) >= 0 {
                 let returnArray: NSMutableArray = NSMutableArray(capacity: Int(count))
                 for i in 0..<Int(count) {
                     returnArray.add(Int(tab_reg[i]))
@@ -206,8 +249,16 @@ class SwiftLibModbus: NSObject {
     
     func readRegistersFrom(startAddress: Int32, count: Int32, success: @escaping ([AnyObject]) -> Void, failure: @escaping (NSError) -> Void) {
         modbusQueue?.async {
+            guard let mb = self.mb else {
+                let error = self.buildNSError(errno: errno)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
+                return
+            }
+            
             let tab_reg: UnsafeMutablePointer<UInt16> = UnsafeMutablePointer<UInt16>.allocate(capacity: Int(count))
-            if modbus_read_registers(self.mb!, startAddress, count, tab_reg) >= 0 {
+            if modbus_read_registers(mb, startAddress, count, tab_reg) >= 0 {
                 let returnArray: NSMutableArray = NSMutableArray(capacity: Int(count))
                 for i in 0..<Int(count) {
                     returnArray.add(Int(tab_reg[i]))
@@ -227,8 +278,16 @@ class SwiftLibModbus: NSObject {
     
     func readInputRegistersFrom(startAddress: Int32, count: Int32, success: @escaping ([AnyObject]) -> Void, failure: @escaping (NSError) -> Void) {
         modbusQueue?.async {
+            guard let mb = self.mb else {
+                let error = self.buildNSError(errno: errno)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
+                return
+            }
+            
             let tab_reg: UnsafeMutablePointer<UInt16> = UnsafeMutablePointer<UInt16>.allocate(capacity: Int(count))
-            if modbus_read_input_registers(self.mb!, startAddress, count, tab_reg) >= 0 {
+            if modbus_read_input_registers(mb, startAddress, count, tab_reg) >= 0 {
                 let returnArray: NSMutableArray = NSMutableArray(capacity: Int(count))
                 for i in 0..<Int(count) {
                     returnArray.add(Int(tab_reg[i]))
@@ -247,12 +306,20 @@ class SwiftLibModbus: NSObject {
     
     func writeRegistersFromAndOn(address: Int32, numberArray: NSArray, success: @escaping () -> Void, failure: @escaping (NSError) -> Void) {
         modbusQueue?.async {
+            guard let mb = self.mb else {
+                let error = self.buildNSError(errno: errno)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
+                return
+            }
+            
             let valueArray: UnsafeMutablePointer<UInt16> = UnsafeMutablePointer<UInt16>.allocate(capacity: numberArray.count)
             for i in 0..<numberArray.count {
                 valueArray[i] = UInt16(numberArray[i] as! Int)
             }
             
-            if modbus_write_registers(self.mb!, address, Int32(numberArray.count), valueArray) >= 0 {
+            if modbus_write_registers(mb, address, Int32(numberArray.count), valueArray) >= 0 {
                 DispatchQueue.main.async {
                     success()
                 }
@@ -278,7 +345,7 @@ class SwiftLibModbus: NSObject {
     }
     
     deinit {
-        // dispatch_release(modbusQueue);
+        guard let mb = mb else { return }
         modbus_free(mb!);
     }
 }
